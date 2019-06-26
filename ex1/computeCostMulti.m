@@ -13,9 +13,18 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
-
-
+% VARIABLES:
+	% X = (1...n) columns for each feature
+	% y = actual value
+	% theta = [0 0 0]
+% FORMUALA:
+	% cost function: J(theta) = 1/2m * sum from 1 to m of (predicted-actual)^2
+	
+predictedMatrix = X * theta;
+subtractedMatrix = predictedMatrix - y;
+squaredMatrix = subtractedMatrix .^ 2;
+sumSquared = sum(squaredMatrix);
+J = 1/(2*m) * sumSquared;
 
 % =========================================================================
 
