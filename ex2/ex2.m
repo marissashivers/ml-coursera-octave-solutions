@@ -24,7 +24,8 @@ clear ; close all; clc
 %  contains the label.
 
 data = load('ex2data1.txt');
-X = data(:, [1, 2]); y = data(:, 3);
+X = data(:, [1, 2]); 
+y = data(:, 3);
 
 %% ==================== Part 1: Plotting ====================
 %  We start the exercise by first plotting the data to understand the 
@@ -46,7 +47,7 @@ legend('Admitted', 'Not admitted')
 hold off;
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+input('');
 
 
 %% ============ Part 2: Compute Cost and Gradient ============
@@ -76,14 +77,14 @@ fprintf('Expected gradients (approx):\n -0.1000\n -12.0092\n -11.2628\n');
 test_theta = [-24; 0.2; 0.2];
 [cost, grad] = costFunction(test_theta, X, y);
 
-fprintf('\nCost at test theta: %f\n', cost);
+fprintf('\nCost at test theta: %f\n', cost);f
 fprintf('Expected cost (approx): 0.218\n');
 fprintf('Gradient at test theta: \n');
 fprintf(' %f \n', grad);
 fprintf('Expected gradients (approx):\n 0.043\n 2.566\n 2.647\n');
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+input('');
 
 
 %% ============= Part 3: Optimizing using fminunc  =============
@@ -120,7 +121,7 @@ legend('Admitted', 'Not admitted')
 hold off;
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+input('');
 
 %% ============== Part 4: Predict and Accuracies ==============
 %  After learning the parameters, you'll like to use it to predict the outcomes

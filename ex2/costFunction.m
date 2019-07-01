@@ -20,11 +20,13 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% COST FUNCTION (vectorized)
+	% hypothesis = g(X*theta)
+	% J(theta) = (1/m) * (-y' * log(h)) - (1 - y)' * log(1-h)
 
-
-
-
-
+hypothesis = sigmoid(X * theta);
+J = (1/m) * sum((-y' * log(hypothesis)) - (1-y)' * log(1-hypothesis));
+grad = (1/m) * sum((hypothesis-y) .* X);
 
 
 % =============================================================
